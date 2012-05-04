@@ -1,0 +1,30 @@
+{
+    "name": "fmt",
+    "description": "Command line output formatting.",
+    "version": "0.1.0",
+    "author": {
+        "name":"Andrew Chilton",
+        "email":"chilts@appsattic.com",
+        "url":"http://www.chilts.org/"
+    },
+    "homepage": "https://github.com/appsattic/fmt",
+    "main": "fmt.js",
+    "engines": {
+        "node": "*"
+    },
+    "repository": {
+        "type" : "git",
+        "url": "git://github.com/appsattic/fmt.git"
+    },
+   "bugs" : {
+        "url" : "http://github.com/appsattic/fmt/issues",
+        "mail" : "chilts@appsattic.com"
+    },
+    "licenses": [{
+        "type": "MIT",
+        "url": "http://github.com/appsattic/fmt/raw/master/LICENSE"
+    }],
+    "keywords": [
+        "cmd", "cli", "console", "output", "stdout"
+    ],
+}
