@@ -15,6 +15,11 @@ fmt.field('Name', 'Fido');
 fmt.field('Description', 'Bouncy. Out there, shiny, long brown coat.');
 fmt.field('Legs', 2);
 fmt.sep();
+fmt.title('A List');
+fmt.li('item 1');
+fmt.li('the second item');
+fmt.li('the third and final item');
+fmt.separator();
 ```
 
 Has the output:
@@ -29,6 +34,11 @@ Legs                 : 4
 Name                 : Fido
 Description          : Bouncy. Out there, shiny, long brown coat.
 Legs                 : 2
+===============================================================================
+--- A List --------------------------------------------------------------------
+* item 1
+* the second item
+* the third and final item
 ===============================================================================
 ```
 

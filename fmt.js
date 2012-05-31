@@ -40,4 +40,9 @@ module.exports.field = function(key, value) {
     console.log('' + key + field.substr(key.length) + ' : ' + value);
 };
 
+// list item
+module.exports.li = function(msg) {
+    console.log('* ' + msg);
+};
+
 // --------------------------------------------------------------------------------------------------------------------

@@ -10,3 +10,8 @@ fmt.field('Name', 'Fido');
 fmt.field('Description', 'Bouncy. Out there, shiny, long brown coat.');
 fmt.field('Legs', 2);
 fmt.separator();
+fmt.title('A List');
+fmt.li('item 1');
+fmt.li('the second item');
+fmt.li('the third and final item');
+fmt.separator();
