@@ -48,16 +48,162 @@ Legs                 : 2
 
 Makes a double line on the screen which is 79 chars long.
 
+e.g.
+
+```
+fmt.separator();
+fmt.sep();
+->
+===============================================================================
+```
+
 ### fmt.line() ###
 
 Makes a line on the screen which is 79 chars long.
+
+e.g.
+
+```
+fmt.line()
+->
+-------------------------------------------------------------------------------
+```
 
 ### fmt.title(title) ###
 
 Renders a title with three '-', then the title, then more (until the 79th char).
 
+e.g.
+
+```
+fmt.title('The Truth about Cats');
+->
+--- The Truth about Cats ------------------------------------------------------
+```
+
 ### fmt.field(key, value) ###
 
 Renders a line with a key and then the value, but with the key padded to 20 chars so that each field lines up.
+
+```
+fmt.field('Name', 'Fido');
+fmt.field('Description', 'Bouncy. Out there, shiny, long brown coat.');
+fmt.field('Legs', 2);
+->
+Name                 : Fido
+Description          : Bouncy. Out there, shiny, long brown coat.
+Legs                 : 2
+```
+
+### fmt.subfield(key, value) ###
+
+Renders a line with a key (preceded by '- ') and then the value, but with the key padded to 20 chars so that each field
+lines up. This can be helpful when you have a field, then other fields related to that one.
+
+e.g.
+
+```
+fs.stat(__filename, function(err, stats) {
+    fmt.field('File', __filename);
+    fmt.subfield('size', stats.size);
+    fmt.subfield('uid', stats.uid);
+    fmt.subfield('gid', stats.gid);
+    fmt.subfield('ino', stats.ino);
+    fmt.subfield('ctime', stats.ctime);
+    fmt.subfield('mtime', stats.mtime);
+});
+->
+File                 : /home/user/path/to/cats-and-dogs.js
+- size               : 1003
+- uid                : 1000
+- gid                : 1000
+- ino                : 17567406
+- ctime              : Sun Aug 19 2012 17:08:52 GMT+1200 (NZST)
+- mtime              : Sun Aug 19 2012 17:08:52 GMT+1200 (NZST)
+```
+
+// subfield
+module.exports.subfield = function(key, value) {
+    console.log('- ' + key + field.substr(key.length + 2) + ' : ' + value);
+};
+
+### fmt.li(msg) ###
+
+Prints the msg preceded with a '* ', so that it looks like a list.
+
+e.g.
+
+```
+fmt.title('A List');
+fmt.li('item 1');
+fmt.li('the second item');
+fmt.li('the third and final item');
+fmt.line()
+->
+--- A List --------------------------------------------------------------------
+* item 1
+* the second item
+* the third and final item
+-------------------------------------------------------------------------------
+```
+
+### fmt.dump(data[, name]) ###
+
+Prints a dump of the data, with the optional name beforehand. This is basically a shortcut for :
+console.log(util.inspect(data, false, null, true));
+
+e.g.
+
+```
+fs.stat(__filename, function(err, stats) {
+    fmt.separator();
+    fmt.title('Dump (with name)');
+    fmt.dump(stats, 'stats');
+    fmt.separator();
+    fmt.title('Dump');
+    fmt.dump(stats);
+    fmt.separator();
+});
+->
+===============================================================================
+--- Dump (with name) ----------------------------------------------------------
+stats : { dev: 2049,
+  ino: 17567406,
+  mode: 33188,
+  nlink: 1,
+  uid: 1000,
+  gid: 1000,
+  rdev: 0,
+  size: 1025,
+  blksize: 4096,
+  blocks: 8,
+  atime: Sun Aug 19 2012 17:28:54 GMT+1200 (NZST),
+  mtime: Sun Aug 19 2012 17:28:51 GMT+1200 (NZST),
+  ctime: Sun Aug 19 2012 17:28:51 GMT+1200 (NZST) }
+===============================================================================
+--- Dump ----------------------------------------------------------------------
+{ dev: 2049,
+  ino: 17567406,
+  mode: 33188,
+  nlink: 1,
+  uid: 1000,
+  gid: 1000,
+  rdev: 0,
+  size: 1025,
+  blksize: 4096,
+  blocks: 8,
+  atime: Sun Aug 19 2012 17:28:54 GMT+1200 (NZST),
+  mtime: Sun Aug 19 2012 17:28:51 GMT+1200 (NZST),
+  ctime: Sun Aug 19 2012 17:28:51 GMT+1200 (NZST) }
+===============================================================================
+```
+
+# Author #
+
+Written by [Andrew Chilton](http://chilts.org/) - [Blog](http://chilts.org/blog/) - [Twitter](https://twitter.com/andychilton).
+
+# License #
+
+[MIT](http://appsattic.mit-license.org/2012/)
 
 (Ends)
