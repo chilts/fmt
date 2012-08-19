@@ -23,6 +23,11 @@ fmt.li('the third and final item');
 
 fmt.separator();
 
+fmt.title('Example');
+fmt.msg('Output as-is!');
+
+fmt.separator();
+
 fs.stat(__filename, function(err, stats) {
     fmt.field('File', __filename);
     fmt.subfield('size', stats.size);

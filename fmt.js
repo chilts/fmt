@@ -64,4 +64,9 @@ module.exports.dump = function(data, name) {
     }
 };
 
+// msg
+module.exports.msg = function(msg) {
+    console.log(msg);
+};
+
 // --------------------------------------------------------------------------------------------------------------------

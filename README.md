@@ -132,11 +132,6 @@ File                 : /home/user/path/to/cats-and-dogs.js
 - mtime              : Sun Aug 19 2012 17:08:52 GMT+1200 (NZST)
 ```
 
-// subfield
-module.exports.subfield = function(key, value) {
-    console.log('- ' + key + field.substr(key.length + 2) + ' : ' + value);
-};
-
 ### fmt.li(msg) ###
 
 Prints the msg preceded with a '* ', so that it looks like a list.
@@ -210,6 +205,24 @@ stats : { dev: 2049,
   mtime: Sun Aug 19 2012 17:28:51 GMT+1200 (NZST),
   ctime: Sun Aug 19 2012 17:28:51 GMT+1200 (NZST) }
 ===============================================================================
+```
+
+### fmt.msg(msg) ###
+
+Prints the msg as-is! :)
+
+e.g.
+
+```
+fmt.title('Example');
+fmt.msg('Output as-is!');
+fmt.line();
+
+->
+
+--- Example -------------------------------------------------------------------
+Output as-is!
+-------------------------------------------------------------------------------
 ```
 
 # Author #
