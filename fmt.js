@@ -9,6 +9,10 @@
 //
 // --------------------------------------------------------------------------------------------------------------------
 
+var util = require('util');
+
+// --------------------------------------------------------------------------------------------------------------------
+
 var sep  = '===============================================================================';
 var line = '-------------------------------------------------------------------------------';
 var field = '                    ';
@@ -40,9 +44,24 @@ module.exports.field = function(key, value) {
     console.log('' + key + field.substr(key.length) + ' : ' + value);
 };
 
+// subfield
+module.exports.subfield = function(key, value) {
+    console.log('- ' + key + field.substr(key.length + 2) + ' : ' + value);
+};
+
 // list item
 module.exports.li = function(msg) {
     console.log('* ' + msg);
+};
+
+// dump
+module.exports.dump = function(data, name) {
+    if ( name ) {
+        console.log(name + ' :', util.inspect(data, false, null, true));
+    }
+    else {
+        console.log(util.inspect(data, false, null, true));
+    }
 };
 
 // --------------------------------------------------------------------------------------------------------------------
