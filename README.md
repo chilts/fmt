@@ -53,7 +53,9 @@ e.g.
 ```
 fmt.separator();
 fmt.sep();
+
 ->
+
 ===============================================================================
 ```
 
@@ -65,7 +67,9 @@ e.g.
 
 ```
 fmt.line()
+
 ->
+
 -------------------------------------------------------------------------------
 ```
 
@@ -77,7 +81,9 @@ e.g.
 
 ```
 fmt.title('The Truth about Cats');
+
 ->
+
 --- The Truth about Cats ------------------------------------------------------
 ```
 
@@ -89,7 +95,9 @@ Renders a line with a key and then the value, but with the key padded to 20 char
 fmt.field('Name', 'Fido');
 fmt.field('Description', 'Bouncy. Out there, shiny, long brown coat.');
 fmt.field('Legs', 2);
+
 ->
+
 Name                 : Fido
 Description          : Bouncy. Out there, shiny, long brown coat.
 Legs                 : 2
@@ -112,7 +120,9 @@ fs.stat(__filename, function(err, stats) {
     fmt.subfield('ctime', stats.ctime);
     fmt.subfield('mtime', stats.mtime);
 });
+
 ->
+
 File                 : /home/user/path/to/cats-and-dogs.js
 - size               : 1003
 - uid                : 1000
@@ -139,7 +149,9 @@ fmt.li('item 1');
 fmt.li('the second item');
 fmt.li('the third and final item');
 fmt.line()
+
 ->
+
 --- A List --------------------------------------------------------------------
 * item 1
 * the second item
@@ -164,7 +176,9 @@ fs.stat(__filename, function(err, stats) {
     fmt.dump(stats);
     fmt.separator();
 });
+
 ->
+
 ===============================================================================
 --- Dump (with name) ----------------------------------------------------------
 stats : { dev: 2049,
