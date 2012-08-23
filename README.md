@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/appsattic/fmt.png)](http://travis-ci.org/appsattic/fmt)
 # fmt - Command Line Output Formatting #
 
 ## Example ##
