@@ -1,5 +1,9 @@
 # fmt - Command Line Output Formatting #
 
+Note: this library is considered stable. It hasn't been changed much since 2012 yet it is still being used across the
+npm ecosystem. If you don't see any updates, it isn't because it is unmaintained but because it just works. Raise an
+issue for bug fixes or feature requests.
+
 ## Example ##
 
 ```
