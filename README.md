@@ -298,11 +298,13 @@ Has the output:
 
 # Author #
 
-Written by [Andrew Chilton](http://chilts.org/) - [Blog](http://chilts.org/) -
-[Twitter](https://twitter.com/andychilton).
+|               | Website                                     | Twitter                                               |
+|:-------------:|:-------------------------------------------:|:-----------------------------------------------------:|
+| Author        | [Andrew Chilton](https://chilts.org/)       | [@andychilton](https://twitter.com/andychilton)       |
+| Company       | [AppsAttic](https://appsattic.com/)         | [@AppsAttic](https://twitter.com/AppsAttic)           |
 
 # License #
 
-* [Copyright 2012-2014 Andrew Chilton.  All rights reserved.](http://chilts.mit-license.org/2012/)
+* [Copyright 2012-2018 Andrew Chilton. All rights reserved.](http://chilts.mit-license.org/2012/)
 
 (Ends)
