@@ -2,16 +2,8 @@
     "name": "fmt",
     "description": "Command line output formatting.",
     "version": "1.0.0",
-    "author": {
-        "name":"Andrew Chilton",
-        "email":"andychilton@gmail.com",
-        "url":"http://chilts.org/"
-    },
-    "homepage": "https://github.com/chilts/fmt",
     "main": "fmt.js",
-    "engines": {
-        "node": "*"
-    },
+    "homepage": "https://github.com/chilts/fmt",
     "repository": {
         "type" : "git",
         "url": "git://github.com/chilts/fmt.git"
@@ -20,10 +12,12 @@
         "url" : "http://github.com/chilts/fmt/issues",
         "mail" : "andychilton@gmail.com"
     },
-    "licenses": [{
-        "type": "MIT",
-        "url": "http://github.com/chilts/fmt/raw/master/LICENSE"
-    }],
+    "author": {
+        "name":"Andrew Chilton",
+        "email":"andychilton@gmail.com",
+        "url":"https://chilts.org/"
+    },
+    "license": "MIT",
     "keywords": [
         "cmd", "cli", "console", "output", "stdout", "dump", "format", "verbose"
     ]
