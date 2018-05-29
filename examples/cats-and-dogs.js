@@ -23,6 +23,17 @@ fmt.li('the third and final item');
 
 fmt.separator();
 
+fmt.title('Quote Block');
+fmt.quoteblock(
+  [
+    'A quote from someone',
+    'but probably attributed to this guy.',
+    ' - Mark Twain',
+  ].join('\n')
+);
+
+fmt.separator();
+
 fmt.title('Example');
 fmt.msg('Output as-is!');
 

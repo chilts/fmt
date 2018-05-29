@@ -16,6 +16,8 @@ var util = require('util');
 var sep  = '===============================================================================';
 var line = '-------------------------------------------------------------------------------';
 var field = '                    ';
+var arrow = '----->  '
+var tab = '        '
 
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -50,8 +52,40 @@ module.exports.subfield = function(key, value) {
 };
 
 // list item
-module.exports.li = function(msg) {
-    console.log('* ' + msg);
+module.exports.li = function(msg, indent) {
+    if ( indent ) {
+        console.log(tab + '* ' + msg);
+    }
+    else {
+        console.log('* ' + msg);
+    }
+};
+
+// arrow
+module.exports.arrow = function(msg) {
+    console.log(arrow + msg);
+};
+
+// indent (shorthand for msg(msg, true)
+module.exports.indent = function(msg) {
+    console.log(tab + msg);
+};
+
+// quoteblock
+module.exports.quoteblock = function(msg, indent) {
+  msg.split(/\n/).forEach(function(m) {
+    if ( indent ) {
+      console.log('        | ' + m);
+    }
+    else {
+      console.log('| ' + m);
+    }
+  })
+};
+
+// spacer (for completeness)
+module.exports.spacer = function() {
+  console.log();
 };
 
 // dump
@@ -65,8 +99,13 @@ module.exports.dump = function(data, name) {
 };
 
 // msg
-module.exports.msg = function(msg) {
-    console.log(msg);
+module.exports.msg = function(msg, indent) {
+    if ( indent ) {
+        console.log(tab + msg);
+    }
+    else {
+        console.log(msg);
+    }
 };
 
 // --------------------------------------------------------------------------------------------------------------------
