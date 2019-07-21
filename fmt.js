@@ -42,13 +42,23 @@ module.exports.title = function(title) {
 };
 
 // field
-module.exports.field = function(key, value) {
-    console.log('' + key + field.substr(key.length) + ' : ' + value);
+module.exports.field = function(key, value, indent) {
+    if ( indent ) {
+        console.log(tab + key + field.substr(key.length) + ' : ' + value);
+    }
+    else {
+        console.log('' + key + field.substr(key.length) + ' : ' + value);
+    }
 };
 
 // subfield
-module.exports.subfield = function(key, value) {
-    console.log('- ' + key + field.substr(key.length + 2) + ' : ' + value);
+module.exports.subfield = function(key, value, indent) {
+    if ( indent ) {
+        console.log(tab + '- ' + key + field.substr(key.length + 2) + ' : ' + value);
+    }
+    else {
+        console.log('- ' + key + field.substr(key.length + 2) + ' : ' + value);
+    }
 };
 
 // list item
