@@ -9,15 +9,17 @@
 //
 // --------------------------------------------------------------------------------------------------------------------
 
-var util = require('util');
+const util = require('util');
+
+const stripAnsi = require('strip-ansi');
 
 // --------------------------------------------------------------------------------------------------------------------
 
-var sep  = '===============================================================================';
-var line = '-------------------------------------------------------------------------------';
-var field = '                    ';
-var arrow = '----->  '
-var tab = '        '
+const sep  = '===============================================================================';
+const line = '-------------------------------------------------------------------------------';
+const field = '                    ';
+const arrow = '----->  '
+const tab = '        '
 
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -36,28 +38,29 @@ module.exports.line = function() {
 
 // title
 module.exports.title = function(title) {
-    var out = '--- ' + title + ' ';
-    out += line.substr(out.length);
+    let out = '--- ' + title + ' ';
+    const outWithoutAnsi = stripAnsi(out);
+    out += line.substr(outWithoutAnsi.length);
     console.log(out);
 };
 
 // field
 module.exports.field = function(key, value, indent) {
     if ( indent ) {
-        console.log(tab + key + field.substr(key.length) + ' : ' + value);
+        console.log(tab + key + field.substr(stripAnsi(key).length) + ' : ' + value);
     }
     else {
-        console.log('' + key + field.substr(key.length) + ' : ' + value);
+        console.log('' + key + field.substr(stripAnsi(key).length) + ' : ' + value);
     }
 };
 
 // subfield
 module.exports.subfield = function(key, value, indent) {
     if ( indent ) {
-        console.log(tab + '- ' + key + field.substr(key.length + 2) + ' : ' + value);
+        console.log(tab + '- ' + key + field.substr(stripAnsi(key).length + 2) + ' : ' + value);
     }
     else {
-        console.log('- ' + key + field.substr(key.length + 2) + ' : ' + value);
+        console.log('- ' + key + field.substr(stripAnsi(key).length + 2) + ' : ' + value);
     }
 };
 

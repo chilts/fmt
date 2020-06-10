@@ -7,7 +7,7 @@ issue for bug fixes or feature requests.
 ## Example ##
 
 ```
-var fmt = require('fmt');
+const fmt = require('fmt');
 
 fmt.sep();
 fmt.title('The Truth about Cats');
@@ -44,6 +44,18 @@ Legs                 : 2
 * the second item
 * the third and final item
 ===============================================================================
+```
+
+Can also be used with [chalk]() and all indentation will still work fine:
+
+```
+const fmt = require('fmt');
+const chalk = require('chalk');
+
+fmt.sep();
+fmt.title(chalk.magenta('The Truth about Cats'));
+fmt.field(chalk.green('Name'), chalk.yellow('Felix'));
+fmt.sep();
 ```
 
 ## Usage ##
@@ -234,19 +246,19 @@ Output as-is!
 You can also do a Heroku build style output, such as the following:
 
 ```
-var fmt = require('../fmt.js');
+const fmt = require('../fmt.js');
 
 fmt.arrow('Deploying ...');
 fmt.indent('Found 20 files:');
 fmt.spacer();
 
-var files = [
+const files = [
     'filename1.txt',
     'doc.doc',
     'image.jpg',
     'document.pdf',
 ]
-for(var i = 0; i < files.length; i++) {
+for(let i = 0; i < files.length; i++) {
     fmt.li(files[i], true);
 }
 

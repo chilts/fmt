@@ -1,16 +1,16 @@
-var fmt = require('../fmt.js');
+const fmt = require('../fmt.js');
 
 fmt.arrow('Deploying ...');
 fmt.indent('Found 20 files:');
 fmt.spacer();
 
-var files = [
+const files = [
     'filename1.txt',
     'doc.doc',
     'image.jpg',
     'document.pdf',
 ]
-for(var i = 0; i < files.length; i++) {
+for(let i = 0; i < files.length; i++) {
     fmt.li(files[i], true);
 }
 
